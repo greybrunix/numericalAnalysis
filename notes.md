@@ -57,7 +57,9 @@ Because of this result we know that the "distance" between 1 and 2 is NOT the sa
 the distance between x- and x+ depends on e:
 
 x- = +(1.b....b) * 2^e
+
 =>
+
 |x+ - x-| = 2^(e-52)
 
 # Upper bound of the absolute error in approximations
@@ -69,6 +71,7 @@ Lorem Ipsum
 |x - fl(x)| / |x| < eps
 
 Thus, the relative error has eps as the upper bound
+
 Thus, it does not depend on the magnitude of the rounded number, having the same precision for both large and small numbers.
 
 ## Note on relative errors
@@ -78,4 +81,76 @@ This is not valid for denormalized numbers
 # Exponents
 
 Lorem Ipsum
+
 Directly on the slides, not approached during class in depth
+
+# Note on Overflows
+
+Matlab (and Octave) handle overflows by calling any number greater than 2^1023, "Inf".
+
+# Note on Underflows
+
+Matlab (and Octave) handle underflows by denormalizing any number smaller than 2^-1022 and such having less precision
+
+Thus, Matlab has a gradual underflow.
+
+# Rounding
+
+```Matlab
+system_dependant('setround','Inf')
+system_dependant('setround','-Inf')
+system_dependant('setround','0')
+system_dependant('setround','nearest')
+```
+
+# Significant digits
+
+There are always 53 significant bits in a normalized representation of a floating point number (IEEE-754)
+
+## Correct significant digits
+
+-x- = (0.d...d-t) * 10^e
+
+mantissa with t digits, then |x - -x-| < 10^(e-t).
+
+When rounding to the closest:
+
+        |x - -x-| <=
+
+### Matlab Examples
+
+Check slides
+
+# Subtractive Cancellation
+
+This phenomenon occurs when, due to subtracting numbers, you lose significant digits.
+
+## How to detect when Subtractive Cancellation might occurr
+
+When the order of the result is much smaller than the order of the operands
+
+# Subtractive Cancellation (2)
+
+Despite not necessarily having a great absolute error, the relative error is of a greater magnitude.
+
+This relative error can and will result in a propagation of the error and exponentiating the absolute error.
+
+# Conditioning a Function
+
+Lorem Ipsum
+
+# Absolute Condition of a function in a point
+
+Formula of Taylor is the formula for f(x + delta x)
+
+thus such is |f' (x)|
+
+## Truncation Error
+
+Are the terms that are ignored
+
+
+
+# SideNote on Taylor Series
+
+
