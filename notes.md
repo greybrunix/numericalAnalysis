@@ -139,7 +139,7 @@ This relative error can and will result in a propagation of the error and expone
 
 Lorem Ipsum
 
-# Absolute Condition of a function in a point
+# Absolute Condition of a Function in a Point
 
 Formula of Taylor is the formula for f(x + delta x)
 
@@ -149,8 +149,34 @@ thus such is |f' (x)|
 
 Are the terms that are ignored
 
+# Notes for class on the 3rd of October
 
+Mainly just analysis/Calculus II reminders, a.k.a. convergent series
 
-# SideNote on Taylor Series
+But adding some notes on Taylor's Series
 
+# Sum of Convergent Series ( Truncation Error )
+## Sum of Geometric Convergent Series
 
+Let us consider the series with ratio 0.1 and 1st term 1
+
+1 + 10^-1 + ... 10^-16 + ...
+
+S = 1/(1-0.1) = 1/0.9
+
+### Conclusion on series
+
+Due to approximation issues, a LOT of the parcels of the series will be ignored for they cannot be represented in such a way that they alter in any
+significant way the result of the sum, thus they can be ignored.
+
+Such a phenomena is called a Truncation Error.
+
+Coming back to the Absolute Condition of a Function in a Point, the Truncation Error is, thus, one of the second order.
+
+# Relative Condition of a Function in a Point 
+
+| x.f'(x) / f(x) |
+
+# Relative Condition and loss of correct significant digits
+
+If the relative condition is of 10^k then there is loss of k decimal digits
