@@ -180,3 +180,39 @@ Coming back to the Absolute Condition of a Function in a Point, the Truncation E
 # Relative Condition and loss of correct significant digits
 
 If the relative condition is of 10^k then there is loss of k decimal digits
+
+# Forward Error and Backward Error
+## Forward Error
+
+ - The calculated value for data x is not the exact value of y = f(x) but actually an approximation of y -> AproxY
+ - DeltaY = f(x) - AproxY
+ - DeltaY is the Forward Error (*Erro Direto*)
+
+## Backward Error
+
+ - x + DeltaX are the distorted data that results exactly in AproxY
+ - DeltaX is the Backward Error (*Erro Inverso*)
+
+# Numerical Instability vs Conditioning
+
+ - A great forward error does not imply Numerical Instability
+ - IF the algorithm is numerically stable |DeltaX| is small 
+ - IF the problem is badly conditioned |DeltaY| > |DeltaX|
+
+## Example of NI
+
+f(x) = sqrt(x+1) - sqrt(x)
+
+g(x) = 1 / (sqrt(x+1) + sqrt(x)) 
+
+Note how f(x) has a subtraction that for x = 10^12 results in subtractive cancellation due to x+1 barely
+differing from x. This results in a greater relative error that is NOT propagated by division.
+
+If for example x was 10^16 then f(x) would have a Catastrophic Cancellation that cancels ALL significant digits (the result would be 0).
+Again this does not happen in the equivalent division expression
+
+Note that f(x) is well conditioned, however it is not backwards stable because of that subtrative cancellation.
+Since g(x) is defined by an equivalent expression, it is well conditioned, and since subtractive cancellation does not occur,
+it is Backwards Stable.
+
+
