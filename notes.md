@@ -215,4 +215,13 @@ Note that f(x) is well conditioned, however it is not backwards stable because o
 Since g(x) is defined by an equivalent expression, it is well conditioned, and since subtractive cancellation does not occur,
 it is Backwards Stable.
 
+# Upper Bound of Truncation errors
+```txt
+f^(k+1)(theta) (x-a)^k+1
+/ (k+1)!
+```
+# Notes on Taylor Series
 
+Just some notes, pretty much trivial
+
+# Taylor Series with x-a
