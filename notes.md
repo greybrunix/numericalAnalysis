@@ -225,3 +225,20 @@ f^(k+1)(theta) (x-a)^k+1
 Just some notes, pretty much trivial
 
 # Taylor Series with x-a
+asda
+
+# Solving Non Linear Equations
+
+x such that f(x) = 0
+
+zeroes of f or roots of the equation
+
+# Bissection method
+
+f in med point m = (a+b) /2
+
+f(m) = 0 then r = m
+f(m) * f(a)< 0 then b = m
+f(m) * f(a) > 0 then a = m 
+
+
