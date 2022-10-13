@@ -5,9 +5,9 @@ This is just Computer Systems for now
 (IEEE 754)
 
 sign mantissa radix
- +-    m     * แ^e
+ +-    m     * รก^e
 
-แ is the base and e the exponent.
+รก is the base and e the exponent.
 
 ## Note on mantissas
 
@@ -237,8 +237,23 @@ zeroes of f or roots of the equation
 
 f in med point m = (a+b) /2
 
-f(m) = 0 then r = m
-f(m) * f(a)< 0 then b = m
-f(m) * f(a) > 0 then a = m 
+- f(m) = 0 then r = m
 
+- f(m) * f(a)< 0 then b = m
+
+- f(m) * f(a) > 0 then a = m 
+
+# Convergence in the bissection method
+
+after k iteractions
+
+- b^(k) - a^(k) = (b-a)/(2^k)
+
+Error:
+
+- |e^(k)| = |x^k-r| < b-a / 2^(k+1)
+
+To guarantee error is < tol we need kmin where it is the smallest positive integer that satisfies the inequality:
+
+- kmin > log2 (b-a)/tol -1
 
