@@ -53,23 +53,33 @@ newton_method(
   return res;
 }
 
-double f(double x) {
-  return x + 1.f;
+double
+f(double x)
+{ return x + 1.f;
 }
 
-double g(double x) {
-  return 1.f;
+double
+g(double x)
+{ return 1.f;
 }
+/*
+double
+f(double x)
+{ return log(x);
+}
+double
+g(double x)
+{ return 1.f / x;
+}
+*/
 
-int main() {
-  double val = 0.f;
+int main()
+{ double val = 0.f;
   const double lim = 1e-16;
   const unsigned int max_iter = 20;
   union Maybe res = newton_method(&f, &g, val, lim, max_iter);
-  if (res.Nothing) {
-    printf("No solution found\n");
-  } else {
-    printf("Solution found after %d iteration(s): %.4f\n", res.Just.iter, res.Just.res);
-  }
+  if (res.Nothing) printf("No solution found\n"); 
+  else printf("Solution found after %d iteration(s): %.4f\n",
+              res.Just.iter, res.Just.res);
   return 0;
 }
